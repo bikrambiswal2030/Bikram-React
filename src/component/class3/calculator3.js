@@ -12,18 +12,6 @@ export default class Calculator3 extends React.Component {
     };
   }
 
-  handleNum1 = (e) => {
-    this.setState({
-      num1: e.target.value
-    });
-  };
-
-  handleNum2 = (e) => {
-    this.setState({
-      num2: e.target.value
-    });
-  };
-
   handleResult = () => {
     this.setState(
       {
@@ -39,7 +27,9 @@ export default class Calculator3 extends React.Component {
   handleClear = () => {
     this.setState({
       num1: "",
-      num2: ""
+      num2: "",
+      sum: "",
+      average: ""
     });
   };
 
@@ -49,12 +39,30 @@ export default class Calculator3 extends React.Component {
         <center>
           <h1>CALCULATE AVERAGE</h1>
           <br />
-          <span className="input">input1:</span>
-          <input value={this.state.num1} onChange={this.handleNum1} />
-          <br />
-          <span className="input">input2:</span>
-          <input value={this.state.num2} onChange={this.handleNum2} />
           <div>
+            <span className="input">input1</span>
+            <input
+              size="15"
+              onChange={(e) => {
+                this.setState({ num1: e.target.value });
+              }}
+              value={this.state.num1}
+            />
+          </div>
+          <br />
+          <div>
+            <span className="input">input2</span>
+            <input
+              size="15"
+              onChange={(e) => {
+                this.setState({ num2: e.target.value });
+              }}
+              value={this.state.num2}
+            />
+          </div>
+
+          <div>
+            <br />
             <button className="btn" onClick={this.handleResult}>
               RESULT
             </button>

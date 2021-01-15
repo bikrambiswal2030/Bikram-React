@@ -32,6 +32,11 @@ export default class Calculator extends React.Component {
       result: parseInt(this.props.num1) / parseInt(this.props.num2)
     });
   };
+  handleClear = () => {
+    this.setState({
+      result: ""
+    });
+  };
 
   render() {
     return (
@@ -49,6 +54,9 @@ export default class Calculator extends React.Component {
           </button>
           <button className="btn" onClick={this.handleDiv}>
             DIVISION
+          </button>
+          <button className="btn" onClick={this.handleClear}>
+            clear
           </button>
 
           <br />

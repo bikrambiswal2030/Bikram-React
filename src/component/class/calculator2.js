@@ -10,12 +10,6 @@ export default class Calculator2 extends React.Component {
       num2: ""
     };
   }
-  handleClear = () => {
-    this.setState({
-      num1: "",
-      num2: ""
-    });
-  };
 
   render() {
     return (
@@ -29,9 +23,10 @@ export default class Calculator2 extends React.Component {
               onChange={(e) => {
                 this.setState({ num1: e.target.value });
               }}
+              value={this.state.num1}
             />
           </div>
-          <br></br>
+          <br />
           <div>
             <span className="input">input2</span>
             <input
@@ -39,14 +34,12 @@ export default class Calculator2 extends React.Component {
               onChange={(e) => {
                 this.setState({ num2: e.target.value });
               }}
+              value={this.state.num2}
             />
           </div>
           <br />
 
           <Calculator num1={this.state.num1} num2={this.state.num2} />
-          <button className="btn" onClick={this.handleClear}>
-            clear
-          </button>
         </center>
       </div>
     );
