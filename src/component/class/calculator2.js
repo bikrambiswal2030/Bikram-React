@@ -23,7 +23,6 @@ export default class Calculator2 extends React.Component {
               onChange={(e) => {
                 this.setState({ num1: e.target.value });
               }}
-              value={this.state.num1}
             />
           </div>
           <br />
@@ -34,11 +33,9 @@ export default class Calculator2 extends React.Component {
               onChange={(e) => {
                 this.setState({ num2: e.target.value });
               }}
-              value={this.state.num2}
             />
           </div>
           <br />
-
           <Calculator num1={this.state.num1} num2={this.state.num2} />
         </center>
       </div>
