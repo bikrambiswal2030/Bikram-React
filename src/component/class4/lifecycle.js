@@ -21,10 +21,10 @@ export default class Lifecycle extends React.Component {
         <label>
           Pick your favorite flavor:
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+            <option value="cocolate">cocolate</option>
+            <option value="vanila">vanila</option>
+            <option value="orange">orange</option>
+            <option value="Mango">Mango</option>
           </select>
         </label>
         <input type="submit" value="Submit" />
