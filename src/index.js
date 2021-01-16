@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Calculator2 from "./component/class/calculator2";
 import Mapper from "./component/class2/mapper";
 import Calculator3 from "./component/class3/calculator3";
+import Lifecycle from "./component/class4/lifecycle";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -10,6 +11,7 @@ ReactDOM.render(
     <Calculator2 />
     <Calculator3 />
     <Mapper />
+    <Lifecycle />
   </React.StrictMode>,
   document.getElementById("root")
 );
