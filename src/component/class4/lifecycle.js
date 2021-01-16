@@ -3,20 +3,13 @@ import React from "react";
 export default class Lifecycle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "coconut" };
-
-    // this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { value: "" };
   }
 
-  //   handleChange(e) {
-  //     this.setState({ value: e.target.value });
-  //   }
-
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     alert("Your favorite flavor is: " + this.state.value);
     e.preventDefault();
-  }
+  };
 
   handleChange = (e) => {
     this.setState({ value: e.target.value });
