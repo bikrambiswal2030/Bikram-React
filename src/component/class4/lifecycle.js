@@ -7,7 +7,10 @@ export default class Lifecycle extends React.Component {
   }
 
   handleSubmit = (e) => {
-    alert("Your favorite flavor is: " + this.state.value);
+    this.setState({
+      car: "your favorate car is : " + this.state.value
+    });
+
     e.preventDefault();
   };
 
@@ -17,18 +20,22 @@ export default class Lifecycle extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Pick your favorite flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="cocolate">cocolate</option>
-            <option value="vanila">vanila</option>
-            <option value="orange">orange</option>
-            <option value="Mango">Mango</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <h1>PICK YOUR FAVORATE CAR</h1>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="AUDI">audi</option>
+              <option value="BMW">bmw</option>
+              <option value="RANGE ROVER">range rover</option>
+              <option value="MERCEDES">mercedes</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <br />
+        <div>{this.state.car}</div>
+      </div>
     );
   }
 }

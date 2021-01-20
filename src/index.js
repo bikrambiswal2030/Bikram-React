@@ -8,10 +8,10 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
+    <Lifecycle />
     <Calculator2 />
     <Calculator3 />
     <Mapper />
-    <Lifecycle />
   </React.StrictMode>,
   document.getElementById("root")
 );
