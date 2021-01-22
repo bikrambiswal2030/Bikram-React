@@ -3,19 +3,20 @@ import React from "react";
 export default class Lifecycle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: "Bikram" };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+  handleChange = (e) => {
+    this.setState({ value: e.target.value });
+  };
 
   handleSubmit = (e) => {
     this.setState({
-      car: "your favorate car is : " + this.state.value
+      car: "you are in the profile of " + this.state.value
     });
 
     e.preventDefault();
-  };
-
-  handleChange = (e) => {
-    this.setState({ value: e.target.value });
   };
 
   render() {
@@ -23,12 +24,13 @@ export default class Lifecycle extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <h1>PICK YOUR FAVORATE CAR</h1>
+            <h1>Profile</h1>
             <select value={this.state.value} onChange={this.handleChange}>
-              <option value="AUDI">audi</option>
-              <option value="BMW">bmw</option>
-              <option value="RANGE ROVER">range rover</option>
-              <option value="MERCEDES">mercedes</option>
+              {/*<option>profile</option>*/}
+              <option value="Bikram">BIKRAM</option>
+              <option value="Amit">AMIT</option>
+              <option value="Saswat">SASWAT</option>
+              <option value="Anil">ANIL</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
