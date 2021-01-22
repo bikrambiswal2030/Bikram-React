@@ -4,8 +4,8 @@ export default class Lifecycle extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: "Bikram" };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange = (e) => {
     this.setState({ value: e.target.value });
