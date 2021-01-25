@@ -1,5 +1,5 @@
 import React from "react";
-import "/Users/USER/Desktop/App stone/bikram-react/src/style/style.css";
+
 export default class Calculator3 extends React.Component {
   constructor(props) {
     super(props);

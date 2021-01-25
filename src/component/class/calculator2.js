@@ -1,6 +1,6 @@
 import React from "react";
 import Calculator from "./calculator";
-import "/Users/USER/Desktop/App stone/bikram-react/src/style/style.css";
+
 export default class Calculator2 extends React.Component {
   constructor(props) {
     super(props);
