@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Arrays_Project extends React.Component {
+export default class Todo extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,37 +15,28 @@ export default class Arrays_Project extends React.Component {
       taskInput: e.target.value
     });
   };
-  pushTask = () => {
-    var temp = this.state.tasksArr;
-    temp.push(this.state.taskInput);
+  hanldePush = () => {
+    var a1 = this.state.tasksArr;
+    a1.push(this.state.taskInput);
     this.setState({
-      tasksArr: temp,
+      tasksArr: a1,
       taskInput: ""
     });
   };
   handleComplete = (e, index) => {
-    var temp = this.state.tasksArr;
-    var ele = temp.splice(index, 1);
-    var temp2 = this.state.tasksCompleted;
-    temp2.push(ele[0]);
-    console.log(ele[0]);
+    var a1 = this.state.tasksArr;
+    var a = a1.splice(index, 1);
+    var a2 = this.state.tasksCompleted;
+    a2.push(a[0]);
     this.setState({
-      tasksArr: temp,
-      tasksCompleted: temp2
+      tasksCompleted: a2
     });
-  };
-
-  handleEnter = (e) => {
-    var code = e.keyCode || e.which;
-    if (code === 13) {
-      this.pushTask();
-    }
   };
 
   render() {
     return (
       <div>
-        <h1>Arrays Assignment!!!</h1>
+        <h1>Todo App</h1>
         <input
           style={{
             borderRadius: 10,
@@ -57,11 +48,10 @@ export default class Arrays_Project extends React.Component {
           placeholder="Enter The Task"
           value={this.state.taskInput}
           onChange={this.handleInput}
-          onKeyPress={this.handleEnter}
         />
         <button
           disabled={this.state.taskInput === "" ? true : false}
-          onClick={this.pushTask}
+          onClick={this.hanldePush}
         >
           Add Task
         </button>
@@ -92,7 +82,7 @@ export default class Arrays_Project extends React.Component {
         </div>
 
         {this.state.tasksCompleted.length === 0 ? (
-          <h2>Please Complete The Task With Due Time</h2>
+          <h2>No Task Completed</h2>
         ) : (
           <h2>Tasks Completed</h2>
         )}
