@@ -15,7 +15,7 @@ export default class Todo extends React.Component {
       taskInput: e.target.value
     });
   };
-  hanldePush = () => {
+  handlePush = () => {
     var a1 = this.state.tasksArr;
     a1.push(this.state.taskInput);
     this.setState({
@@ -51,7 +51,7 @@ export default class Todo extends React.Component {
         />
         <button
           disabled={this.state.taskInput === "" ? true : false}
-          onClick={this.hanldePush}
+          onClick={this.handlePush}
         >
           Add Task
         </button>
