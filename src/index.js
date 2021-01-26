@@ -5,6 +5,7 @@ import Mapper from "./component/class2/mapper";
 import Calculator3 from "./component/class3/calculator3";
 import Lifecycle from "./component/class4/lifecycle";
 import Todo from "./component/todo/todo";
+import App from "./component/class4/lifecycle2";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

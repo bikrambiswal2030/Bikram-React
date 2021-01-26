@@ -1,15 +1,3 @@
-#todo {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  color: #fff;
-  background: linear-gradient(#ba4a00, #b7950b, #239b56, #6c3483, #b03a2e);
-
-  -webkit-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
-}
 .float-container {
   padding: 20px;
 }
@@ -18,17 +6,11 @@
   width: 45%;
   float: left;
   padding: 20px;
-  border: 2px solid #31344d;
+  border: 2px solid blue;
 }
 .float-child2 {
   width: 45%;
   float: right;
   padding: 20px;
-  border: 2px solid #0a5005;
-}
-button {
-  background-color: #5499c7;
-  border-radius: 6px;
-  font-size: 16px;
-  border: 2px solid #00ff00;
+  border: 2px solid red;
 }
