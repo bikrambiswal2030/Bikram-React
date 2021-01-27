@@ -3,15 +3,22 @@ import "../style.css";
 
 import { Switch, Grid, Typography, Button, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { dark } from "@material-ui/core/styles/createPalette";
+var theme = createMuiTheme({
+  palette: {
+    type: "dark"
+  }
+});
+
 export default class Todo extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      darkMode: false,
       tasksArr: [],
       taskInput: "",
-      tasksCompleted: []
+      tasksCompleted: [],
+      todoTheme: ""
     };
   }
   handleInput = (e) => {
@@ -36,29 +43,15 @@ export default class Todo extends React.Component {
       tasksCompleted: a2
     });
   };
-  setDarkMode = (mode) => {
-    this.setState({ darkMode: mode });
-  };
-  theme = () => {
-    createMuiTheme({
-      palette: {
-        type: this.state.darkMode ? "dark" : "light"
-      }
-    });
-  };
+
   render() {
     return (
       <div>
-        <ThemeProvider theme={this.theme}>
+        <ThemeProvider theme={theme}>
           <Paper style={{ height: "100vh" }}>
             <center>
               <Grid container direction="column">
                 <Typography variant="h1">Todo App</Typography>
-
-                <Switch
-                  checked={this.state.darkMode}
-                  onChange={this.setDarkMode(!this.state.darkMode)}
-                />
               </Grid>
 
               <input
