@@ -18,7 +18,7 @@ export default class Todo extends React.Component {
       tasksArr: [],
       taskInput: "",
       tasksCompleted: [],
-      todoTheme: ""
+      tasksUndo: []
     };
   }
   handleInput = (e) => {
@@ -41,6 +41,15 @@ export default class Todo extends React.Component {
     a2.push(a[0]);
     this.setState({
       tasksCompleted: a2
+    });
+  };
+  handleUndo = (e, index) => {
+    var a2 = this.state.tasksCompleted;
+    var b = a2.splice(index, 1);
+    var b2 = this.state.tasksUndo;
+    b2.push(b[0]);
+    this.setState({
+      tasksArr: b2
     });
   };
 
@@ -112,13 +121,23 @@ export default class Todo extends React.Component {
                 ) : (
                   <h2>Tasks Completed</h2>
                 )}
-                <div class="green">
+                <div class="blue">
                   <ul>
                     {this.state.tasksCompleted.map((single, index) => {
                       return (
                         <li>
                           {single}
                           <br />
+                          <Button
+                            variant="contained"
+                            color="secondary"
+                            size="small"
+                            onClick={(e) => {
+                              this.handleUndo(e, index, single);
+                            }}
+                          >
+                            Undo
+                          </Button>
                         </li>
                       );
                     })}
