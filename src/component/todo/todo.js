@@ -1,9 +1,10 @@
 import React from "react";
 import "../style/style.css";
 
-import { Switch, Grid, Typography, Button, Paper } from "@material-ui/core";
+import { Grid, Typography, Button, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { dark } from "@material-ui/core/styles/createPalette";
+import DeleteIcon from "@material-ui/icons/Delete";
 var theme = createMuiTheme({
   palette: {
     type: "dark"
@@ -145,9 +146,12 @@ export default class Todo extends React.Component {
                           >
                             Undo
                           </Button>
+
                           <Button
-                            variant="outlined"
-                            color="primary"
+                            variant="contained"
+                            style={{ backgroundColor: "darkred" }}
+                            size="small"
+                            startIcon={<DeleteIcon />}
                             onClick={() => {
                               this.handleDelete(index);
                             }}
