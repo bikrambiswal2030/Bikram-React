@@ -26,7 +26,6 @@ export default class Lifecycle extends React.Component {
           <label>
             <h1>Profile</h1>
             <select value={this.state.value} onChange={this.handleChange}>
-              {/*<option>profile</option>*/}
               <option value="Bikram">BIKRAM</option>
               <option value="Amit">AMIT</option>
               <option value="Saswat">SASWAT</option>

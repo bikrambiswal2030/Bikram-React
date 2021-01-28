@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.css";
+import "../style/style.css";
 
 import { Switch, Grid, Typography, Button, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -34,7 +34,7 @@ export default class Todo extends React.Component {
       taskInput: ""
     });
   };
-  handleComplete = (e, index) => {
+  handleComplete = (index) => {
     var a1 = this.state.tasksArr;
     var a = a1.splice(index, 1);
     var a2 = this.state.tasksCompleted;
@@ -43,13 +43,20 @@ export default class Todo extends React.Component {
       tasksCompleted: a2
     });
   };
-  handleUndo = (e, index) => {
+  handleUndo = (index) => {
     var a2 = this.state.tasksCompleted;
     var b = a2.splice(index, 1);
     var b2 = this.state.tasksUndo;
     b2.push(b[0]);
     this.setState({
       tasksArr: b2
+    });
+  };
+  handleDelete = (index) => {
+    var a2 = this.state.tasksCompleted;
+    a2.splice(index, 1);
+    this.setState({
+      tasksCompleted: a2
     });
   };
 
@@ -92,7 +99,7 @@ export default class Todo extends React.Component {
                 ) : (
                   <h2>Tasks to do</h2>
                 )}
-                <div class="blue">
+                <div>
                   <ul>
                     {this.state.tasksArr.map((single, index) => {
                       return (
@@ -103,8 +110,8 @@ export default class Todo extends React.Component {
                             variant="contained"
                             color="secondary"
                             size="small"
-                            onClick={(e) => {
-                              this.handleComplete(e, index, single);
+                            onClick={() => {
+                              this.handleComplete(index, single);
                             }}
                           >
                             Completed
@@ -121,7 +128,7 @@ export default class Todo extends React.Component {
                 ) : (
                   <h2>Tasks Completed</h2>
                 )}
-                <div class="blue">
+                <div>
                   <ul>
                     {this.state.tasksCompleted.map((single, index) => {
                       return (
@@ -130,13 +137,22 @@ export default class Todo extends React.Component {
                           <br />
                           <Button
                             variant="contained"
-                            color="secondary"
+                            color="primary"
                             size="small"
-                            onClick={(e) => {
-                              this.handleUndo(e, index, single);
+                            onClick={() => {
+                              this.handleUndo(index, single);
                             }}
                           >
                             Undo
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => {
+                              this.handleDelete(index);
+                            }}
+                          >
+                            Delete
                           </Button>
                         </li>
                       );
