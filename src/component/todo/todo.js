@@ -153,10 +153,16 @@ export default class Todo extends React.Component {
                             size="small"
                             startIcon={<DeleteIcon />}
                             onClick={() => {
-                              this.handleDelete(index);
+                              if (
+                                window.confirm(
+                                  "Are you sure to Delete this task"
+                                )
+                              ) {
+                                this.handleDelete(index);
+                              }
                             }}
                           >
-                            Delete
+                            DELETE
                           </Button>
                         </li>
                       );
