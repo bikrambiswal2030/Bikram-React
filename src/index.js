@@ -7,12 +7,12 @@ import Lifecycle from "./component/class4/lifecycle";
 import Todo from "./component/todo/todo";
 import AlertDialog from "./component/todo/dialog";
 import Ex from "./component/todo/example2";
-import App from "./component/class4/lifecycle2";
+import App from "./component/class4/dark";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Todo />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
