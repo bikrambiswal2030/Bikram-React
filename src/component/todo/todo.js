@@ -5,6 +5,11 @@ import { Grid, Typography, Button, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { dark } from "@material-ui/core/styles/createPalette";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 var theme = createMuiTheme({
   palette: {
     type: "dark"
@@ -16,6 +21,7 @@ export default class Todo extends React.Component {
     super(props);
 
     this.state = {
+      open: false,
       tasksArr: [],
       taskInput: "",
       tasksCompleted: [],
@@ -57,8 +63,15 @@ export default class Todo extends React.Component {
     var a2 = this.state.tasksCompleted;
     a2.splice(index, 1);
     this.setState({
-      tasksCompleted: a2
+      tasksCompleted: a2,
+      open: false
     });
+  };
+  openDialog = () => {
+    this.setState({ open: true });
+  };
+  closeDialog = () => {
+    this.setState({ open: false });
   };
 
   render() {
@@ -149,21 +162,50 @@ export default class Todo extends React.Component {
 
                           <Button
                             variant="contained"
-                            style={{ backgroundColor: "darkred" }}
+                            style={{
+                              backgroundColor: "darkred"
+                            }}
                             size="small"
                             startIcon={<DeleteIcon />}
-                            onClick={() => {
-                              if (
-                                window.confirm(
-                                  "Are you sure to Delete this task"
-                                )
-                              ) {
-                                this.handleDelete(index);
-                              }
-                            }}
+                            onClick={this.openDialog}
                           >
                             DELETE
                           </Button>
+                          <Dialog
+                            open={this.state.open}
+                            onClose={this.closeDialog}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                          >
+                            <DialogTitle id="alert-dialog-title">
+                              {"Delete the task"}
+                            </DialogTitle>
+                            <DialogContent>
+                              <DialogContentText id="alert-dialog-description">
+                                Are you sure you want to do this?
+                              </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                              <Button
+                                onClick={this.closeDialog}
+                                color="primary"
+                              >
+                                Cancel
+                              </Button>
+                              <Button
+                                color="primary"
+                                onClick={() => {
+                                  {
+                                    this.handleDelete(index);
+                                  }
+                                }}
+                                startIcon={<DeleteIcon />}
+                                onClose={this.closeDialog}
+                              >
+                                Delete
+                              </Button>
+                            </DialogActions>
+                          </Dialog>
                         </li>
                       );
                     })}

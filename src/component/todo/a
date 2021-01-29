@@ -1,0 +1,39 @@
+state = {
+    open: false
+  };
+  openDialog() {
+    this.setState({ open: true });
+  }
+  <Button
+                        variant="contained"
+                        style={{ backgroundColor: "darkred" }}
+                        size="small"
+                        onClick={() => {
+                          if (
+                            window.confirm("Are you sure to Delete this task")
+                          ) {
+                            this.handleDelete(index);
+                          }
+                        }}
+                      >
+                        DELETE
+                      </Button>
+                      <Button
+                                             variant="contained"
+                                             style={{
+                                               backgroundColor: "darkred"
+                                             }}
+                                             size="small"
+                                             startIcon={<DeleteIcon />}
+                                             onClick={() => {
+                                               if (
+                                                 window.confirm(
+                                                   "Are you sure to Delete this task"
+                                                 )
+                                               ) {
+                                                 this.handleDelete(index);
+                                               }
+                                             }}
+                                           >
+                                             DELETE
+                                           </Button>
