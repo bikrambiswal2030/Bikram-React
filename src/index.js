@@ -6,13 +6,14 @@ import Calculator3 from "./component/class3/calculator3";
 import Lifecycle from "./component/class4/lifecycle";
 import Todo from "./component/todo/todo";
 import AlertDialog from "./component/todo/dialog";
-import Ex from "./component/todo/example2";
+import Fetcher from "./component/Api/api";
+
 import App from "./component/class4/dark";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Fetcher />
   </React.StrictMode>,
   document.getElementById("root")
 );

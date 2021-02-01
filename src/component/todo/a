@@ -37,3 +37,16 @@ state = {
                                            >
                                              DELETE
                                            </Button>
+                                           DARK MODE
+                                           <Grid container>
+                               <Grid item xs={12}>
+                                 <Button onClick={this.toggleTheme}>
+                                   {this.state.dark ? "light" : "dark"}
+                                 </Button>
+                               </Grid>
+                               <Grid item xs={12}>
+                                 <Switch
+                                   
+                                   onChange={this.toggleTheme}
+                                 />
+                               </Grid>

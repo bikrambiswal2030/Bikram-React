@@ -1,0 +1,34 @@
+<Grid item xs={12}>
+                <Button onClick={this.toggleTheme}>
+                  {this.state.dark ? (
+                    <BrightnessHighIcon />
+                  ) : (
+                    <Brightness4Icon />
+                  )}
+                  {this.state.dark ? "LIGHT MODE" : "DARK MODE"}
+                </Button>
+              </Grid>
+              <IconButton onClick={this.handleClick2}>
+              <ColorLensIcon
+                fontSize="large"
+                style={{ color: green[500] }}
+              ></ColorLensIcon>
+            </IconButton>
+            <BodyBackgroundColor backgroundColor='#FF00FF'>
+        <h1>Home, sweet home.</h1>
+      </BodyBackgroundColor
+      <div
+        style={{
+          backgroundColor: this.state.color,
+          width: "100px",
+          height: "100px"
+        }}
+      >
+        <Button variant="contained" color="primary" onClick={this.handleClick}>
+          add_circle
+        </Button>
+        {this.handleClick}
+
+        {console.log(this.state.color)}
+      </div>
+      style={{ height: "100vh" }}
