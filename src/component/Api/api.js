@@ -29,7 +29,10 @@ export default class Fetcher extends React.Component {
         style={{
           backgroundColor: this.state.color,
           width: "100vh",
-          height: "100vh"
+          height: "100vh",
+          paddingbottom: "100vh",
+          paddingleft: "100vh",
+          paddingRight: "100vh"
         }}
       >
         <Button variant="contained" color="primary" onClick={this.handleClick}>
