@@ -6,7 +6,6 @@ export default class Fetcher extends React.Component {
     super(props);
 
     this.state = {
-      arr: [],
       color: ""
     };
   }
