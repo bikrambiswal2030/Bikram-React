@@ -8,13 +8,14 @@ import Todo from "./component/todo/todo";
 import AlertDialog from "./component/todo/dialog";
 import Fetcher from "./component/Api/api";
 import Login from "./component/Api/login";
+import Delay from "./component/Api/delay";
 
 import App from "./component/class4/dark";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Delay />
   </React.StrictMode>,
   document.getElementById("root")
 );
