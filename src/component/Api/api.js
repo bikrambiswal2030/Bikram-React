@@ -12,7 +12,7 @@ export default class Fetcher extends React.Component {
   }
 
   handleClick = () => {
-    fetch("http://www.colr.org/json/color/latest")
+    fetch("http://www.colr.org/json/color/random")
       .then((res) => res.json())
       .then((colors) => {
         console.log(colors);

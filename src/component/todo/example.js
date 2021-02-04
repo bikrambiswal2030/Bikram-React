@@ -19,7 +19,7 @@ export default class Example extends React.Component {
       setOpen: true
     });
   };
-  handleClose = () => {
+  handleSucess = () => {
     this.setState({
       setOpen: false
     });
