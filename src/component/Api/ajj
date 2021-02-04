@@ -32,3 +32,6 @@
         {console.log(this.state.color)}
       </div>
       style={{ height: "100vh" }}
+      <Alert onClose={this.handleClose} severity="success">
+                    {this.state.message}
+                  </Alert>
