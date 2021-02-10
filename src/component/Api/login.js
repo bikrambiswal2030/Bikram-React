@@ -8,7 +8,8 @@ import {
   CardActions,
   CardContent,
   Avatar,
-  Snackbar
+  Snackbar,
+  CircularProgress
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import LockIcon from "@material-ui/icons/Lock";
@@ -143,7 +144,11 @@ export default class Login extends React.Component {
               >
                 {this.state.message === "login failed" ? (
                   <Alert onClose={this.handleClose} severity="error">
-                    {this.state.message}
+                    {this.state.message ? (
+                      this.state.message
+                    ) : (
+                      <CircularProgress disableShrink></CircularProgress>
+                    )}
                   </Alert>
                 ) : (
                   <Alert onClose={this.handleClose} severity="success">

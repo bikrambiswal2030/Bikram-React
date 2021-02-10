@@ -10,17 +10,28 @@ import Fetcher from "./component/Api/api";
 import Login from "./component/Api/login";
 import Delay from "./component/Api/delay";
 
-import App from "./component/class4/dark";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router } from "react-router-dom";
+import RoomProvider from "./component/context";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Login />
-  </React.StrictMode>,
+  <RoomProvider>
+    <Router>
+      <App />
+    </Router>
+  </RoomProvider>,
+
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+if (module.hot) {
+  module.hot.accept();
+}
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
